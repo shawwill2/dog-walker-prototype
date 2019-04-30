@@ -18,7 +18,7 @@
   position: fixed;  /*fixed position while scrolling*/
   bottom: 0;
   left: 0;
-    right: 0;
+  right: 0;
   width: 100%;
   height: 44px;
   pointer-events: none;
@@ -138,5 +138,57 @@ a:visited {
   background-color: #edf9f6;/*set background colour*/
 }
 
+#navButton1 {
+    position: fixed; 
+    background-color: #67c8a6; 
+    border: none;
+    font-weight: bold; 
+    color: #f8db7e;
+    left: 100px
+}
+#navButton2 {
+    position: fixed; 
+    background-color: #67c8a6; 
+    border: none;
+    font-weight: bold; 
+    color: #f8db7e;
+    left: 160px
+}
+#navButton3 {
+    position: fixed; 
+    background-color: #67c8a6; 
+    border: none;
+    font-weight: bold; 
+    color: #f8db7e;
+    left: 220px
+}
+#navButton4 {
+    position: relative; 
+    background-color: #67c8a6; 
+    border: none;
+    font-weight: bold; 
+    color: #f8db7e;
+    left: 280px
+}
+
 .container {
+}
+
+@media only screen and (max-width: 320px) {
+  #navButton1 {
+    left:60px;
+    position:fixed;
+  }
+      #navButton2 {
+    left:130px;
+    position:fixed;
+  }
+      #navButton3 {
+    left:190px;
+    position:fixed;
+  }
+      #navButton4 {
+    left:260px;
+    position:fixed;
+  }
 }
