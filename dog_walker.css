@@ -20,7 +20,8 @@
   left: 0;
   width: 100%;
   height: 44px;
-  pointer-events: none
+  pointer-events: none;
+    opacity: 0.5;
 }
 
 #legend {
@@ -122,6 +123,42 @@
   left: 40px;
   text-decoration:none;/*remove link from navbar*/
 }
+
+#navButton1 {
+    position: relative; 
+    background-color: #67c8a6; 
+    border: none;
+    font-weight: bold; 
+    color: #f8db7e; 
+    right:89px;
+}
+#navButton2 {
+    position: relative; 
+    background-color: #67c8a6; 
+    border: none;
+    font-weight: bold; 
+    color: #f8db7e; 
+    right:67px;
+}
+#navButton3 {
+    position: relative; 
+    background-color: #67c8a6; 
+    border: none;
+    font-weight: bold; 
+    color: #f8db7e; 
+    right:45px;
+}
+#navButton4 {
+    position: relative; 
+    background-color: #67c8a6; 
+    border: none;
+    font-weight: bold; 
+    color: #f8db7e; 
+    right:23px;
+}
+
+
+
 a:link {
   text-decoration: none; /*remove link from navbar*/
 }
@@ -136,5 +173,23 @@ a:visited {
   background-color: #edf9f6;/*set background colour*/
 }
 
-.container {
+@media only screen and (max-width: 320px) {
+   #navButton1 {
+        position: fixed;
+        left:60px;
+    }
+   #navButton2 {
+        position: fixed;
+        left:130px;
+    }
+       #navButton3 {
+        position: fixed;
+        left:200px;
+    }
+       #navButton4 {
+        position: fixed;
+        left:260px;
+    }
 }
+
+
