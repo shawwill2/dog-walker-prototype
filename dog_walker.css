@@ -1,0 +1,140 @@
+.logo img {  /*dog walker nav bar image*/
+  float: left; /*set logo to left of navbar*/
+  width:30px; /*size of logo*/
+}
+
+.navbar {
+  background-color: #67c8a6; /*nav bar colour*/
+  position: fixed;  /*fixed position while scrolling*/
+  width: 100%; /*fit to screen*/
+  height: 44px; /*set height*/
+  left: 0; /*fix position*/
+  top: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+.bottom-nav {
+  background-color: #67c8a6; /*nav bar colour*/
+  position: fixed;  /*fixed position while scrolling*/
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  pointer-events: none
+}
+
+#legend {
+  background-color: #67c8a6; /*nav bar colour*/
+  position: fixed;  /*fixed position while scrolling*/
+  top: 50px;
+  left: 5;
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  min-width: 50px;
+  display:none;
+  background-image: url("legend.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 21px;
+  opacity: 0.8;
+}
+
+#legend li {
+    list-style-type: none;
+    right: 10px;
+    bottom: 9px;
+    position: relative;
+    font-size: 12.5px;
+    color: #f8db7e;
+    opacity: 2;
+    margin: 9px 0;
+}
+#thankyou {
+  background-color: #67c8a6; /*nav bar colour*/
+  position: fixed;  /*fixed position while scrolling*/
+  top: 50px;
+  right: 0;
+  width: 100px;
+  height: 60px;
+  max-width: 100px;
+  min-width: 50px;
+  display:none;
+  opacity: 0.8;
+  font-size: 12.5px;
+  text-decoration: none;
+  border: none;
+  color: #f8db7e;
+  padding: 5px 10px;
+}
+
+.savebutton {
+  background-color: #67c8a6; /*nav bar colour*/
+  position: fixed;  /*fixed position while scrolling*/
+  overflow: hidden;
+  bottom: 44px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  z-index: 0;
+}
+
+#toggleLegend {
+  background-color: #67c8a6; /*nav bar colour*/
+  position: fixed;  /*fixed position while scrolling*/
+  overflow: hidden;
+  bottom: 44px;
+  left: 0;
+  width: 60px;
+  height: 20px;
+  z-index: 1;
+  font-size: 12.5px;
+  text-decoration: none;
+  border: none;
+  color: #f8db7e;
+}
+#submitWalk {
+  background-color: #67c8a6; /*nav bar colour*/
+  position: fixed;  /*fixed position while scrolling*/
+  overflow: hidden;
+  bottom: 44px;
+  right: 0px;
+  width: 60px;
+  height: 20px;
+  z-index: 1;
+  font-size: 12.5px;
+  text-decoration: none;
+  border: none;
+  color: #f8db7e;
+}
+#toggleLegend:hover
+{opacity: 0.8;}
+
+#mainButton:hover
+{opacity: 0.8;}
+
+.navbar a { /*dog walker font settings*/
+  font-weight: bold; 
+  font-size: 17.5px;
+  color: #f8db7e;
+  position: absolute; /*adjust position*/
+  top: 14.75px;
+  left: 40px;
+  text-decoration:none;/*remove link from navbar*/
+}
+a:link {
+  text-decoration: none; /*remove link from navbar*/
+}
+
+a:visited {
+  text-decoration: none; /*remove link from navbar*/
+}
+
+.page-wrapper { /*wrap page*/
+  margin: 0px;/*fix page*/
+  font-family: 'Roboto', sans-serif;/*set font*/
+  background-color: #edf9f6;/*set background colour*/
+}
+
+.container {
+}

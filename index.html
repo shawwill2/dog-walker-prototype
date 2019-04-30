@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link rel="stylesheet" href="dog_walker.css">
+<title>Locator - Find Your Location</title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDpRiEB8nfTckN30OjnzWllkKldDcfRDA&libraries=drawing&callback" async defer>
+</script>
+<script type="text/javascript">
+function showPosition(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showMap, showError);
+    } else{
+        alert("Sorry, your browser does not support HTML5 geolocation.");
+    }
+}
+ 
+// Define callback function for successful attempt
+function showMap(position){
+    // Get location data
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
+    var latlong = new google.maps.LatLng(lat, long);
+    
+    var myOptions = {
+        center: latlong,
+        zoom: 16,
+        mapTypeControl: false,
+        navigationControlOptions: {style:google.maps.NavigationControlStyle.SMALL},
+        disableDefaultUI: true
+    }
+    
+
+    var map = new google.maps.Map(document.getElementById("embedMap"), myOptions);
+    
+    var marker = new google.maps.Marker({position:latlong, map:map, title:"You are here!", icon: 'Ellipse.png'});
+    
+    var ctaLayer = new google.maps.KmlLayer({
+          url: 'https://docs.google.com/uc?id=1JEOLocypIasBryadPwMe7vVt7AFJopms&amp;export=kml',
+          map: map,
+          fill: "#02BC74",
+          preserveViewport: true
+        });
+    
+    var drawingTool =   new google.maps.drawing.DrawingManager();
+    
+    var drawingManager = new google.maps.drawing.DrawingManager({
+          drawingMode: google.maps.drawing.OverlayType.MARKER,
+          drawingControl: true,
+          markerOptions: {icon: 'drop.png'},
+          drawingControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM_CENTER,
+          drawingModes: ['marker']
+          },
+        });
+
+        drawingManager.setMap(map);
+
+        var drawingManager = new google.maps.drawing.DrawingManager({
+          drawingMode: google.maps.drawing.OverlayType.MARKER,
+          drawingControl: true,
+          markerOptions: {icon: 'hazard.png'
+                         },
+          drawingControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM_CENTER,
+          drawingModes: ['marker']
+          },
+            
+        });
+    
+        drawingManager.setMap(map);
+    
+        var drawingManager = new google.maps.drawing.DrawingManager({
+          drawingMode: google.maps.drawing.OverlayType.MARKER,
+          drawingControl: true,
+          markerOptions: {icon: 'bin.png'
+                         },
+          drawingControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM_CENTER,
+          drawingModes: ['marker']
+          },
+        });
+            drawingManager.setMap(map);
+    
+        var drawingManager = new google.maps.drawing.DrawingManager({
+          drawingMode: google.maps.drawing.OverlayType.POLYLINE,
+          polylineOptions: {strokeColor: "#02BC74",
+                           strokeWeight: 2},
+          drawingControl: true,
+          drawingControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM_CENTER,
+          drawingModes: ['polyline']
+          },
+            
+        });
+        drawingManager.setMap(map);
+/*      var Lines = [];
+        google.maps.event.addDomListener(drawingManager, 'polylinecomplete', function (polyline) {
+        Lines.push(polyline);
+});
+
+        google.maps.event.addDomListener(savebutton, 'click', function () {
+            document.getElementById("savedata").value = "";
+            for (var i = 0; i < Lines.length; i++) {
+                document.getElementById("savedata").value += "Path";
+                document.getElementById("savedata").value +=
+                 Lines[i].getPath().getArray().toString();
+                document.getElementById("savedata").value += "";
+            }
+        });*/
+}
+// Define callback function for failed attempt
+function showError(error){
+    if(error.code == 1){
+        result.innerHTML = "You've decided not to share your position, but it's OK. We won't ask you again.";
+    } else if(error.code == 2){
+        result.innerHTML = "The network is down or the positioning service can't be reached.";
+    } else if(error.code == 3){
+        result.innerHTML = "The attempt timed out before it could get the location data.";
+    } else{
+        result.innerHTML = "Geolocation failed due to unknown error.";
+    }
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#toggleLegend").click(function(){
+        $("#legend").toggle();
+    });
+});
+    $(document).ready(function(){
+    $("#submitWalk").click(function(){
+        $("#thankyou").toggle();
+    });
+});
+</script>
+<title>Dog Walker</title>
+</head>
+<body>
+    <div class='page-wrapper'>
+    <div class= 'navbar'>
+    <div class="logo">
+    <img src="image.png" alt=""><!--nav logo image-->
+    </div>
+    <nav>
+    <a href="#" title="Home">Dog Walker</a><!--heading - home button-->
+    </nav>
+    </div>
+    <button type="button" id = "toggleLegend">?</button>
+    <button type="button" id = "submitWalk">Submit</button>
+    <div id="embedMap" style="width: 100%; height: 100%; position: absolute; left:0; top:0px;">
+    <button type="button" id = "mainButton" style="position: relative; left:50%; top:45%; margin-left:-115px; margin-top:0x; background-color: #67c8a6; border: none; padding: 15px 30px; font-weight: bold; color: #f8db7e;font-size: 12.5px;" onclick="showPosition();">Find a Dog Walk Near Me!</button>
+    </div>
+        <div id = "thankyou">Thank you, your input has been submitted to Dog Walker</div>
+    <div id = "legend">
+    <ul>
+         <li>Water</li>
+         <li>Hazard</li>
+         <li>Bin</li>
+         <li>Map Path</li>
+    </ul>
+    </div>
+<!--    <div class = 'savebutton'>    
+    <button id="savebutton" style="position: relative; background-color: #67c8a6; border: none;font-weight: bold; color: #f8db7e;">SAVE PATH</button>
+    <div class = 'save-path'>
+    <textarea id="savedata" rows="1" cols="30" >
+        </textarea></div></div>-->
+    <div class= 'bottom-nav'>
+    <div class= "nav-buttons" style= "position:fixed;left:50%;padding: 15px 0px;";>
+    <button type="button" id="navButton" style="position: relative; background-color: #67c8a6; border: none;font-weight: bold; color: #f8db7e; right:89px;" onclick=""><img src="drop_icon.png" style="height:20px; width: 15px;"></button>
+    <button type="button" style="position: relative; background-color: #67c8a6; border: none;font-weight: bold; color: #f8db7e; right:67px;" onclick=""><img src="hazard_icon.png" style="height:20px;"></button>
+    <button type="button" style="position: relative; background-color: #67c8a6; border: none;font-weight: bold; color: #f8db7e; right: 45px;" onclick=""><img src="bin_icon.png" style="height:20px;"></button>
+    <button type="button" style="background-color: #67c8a6; border: none; color: #f8db7e; position: relative; right: 23px;"onclick="initiateMarker()";><img src="Ellipse2.png" style="height:20px;"></button>
+    </div>
+    </div>
+    </div>
+</body>
+</html>                         
