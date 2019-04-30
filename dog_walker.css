@@ -176,11 +176,11 @@ a:visited {
 
 @media only screen and (max-width: 320px) {
   #navButton1 {
-    left:50px;
+    left:30px;
     position:fixed;
   }
       #navButton2 {
-    left:120px;
+    left:100px;
     position:fixed;
   }
       #navButton3 {
