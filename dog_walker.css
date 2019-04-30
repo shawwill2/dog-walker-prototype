@@ -130,7 +130,7 @@
     border: none;
     font-weight: bold; 
     color: #f8db7e; 
-    right:89px;
+    right: 75%;
 }
 #navButton2 {
     position: relative; 
@@ -138,7 +138,7 @@
     border: none;
     font-weight: bold; 
     color: #f8db7e; 
-    right:67px;
+    right:50%;
 }
 #navButton3 {
     position: relative; 
@@ -146,7 +146,7 @@
     border: none;
     font-weight: bold; 
     color: #f8db7e; 
-    right:45px;
+    right: 28%;
 }
 #navButton4 {
     position: relative; 
@@ -154,7 +154,7 @@
     border: none;
     font-weight: bold; 
     color: #f8db7e; 
-    right:23px;
+    right: 5%;
 }
 
 
@@ -173,23 +173,75 @@ a:visited {
   background-color: #edf9f6;/*set background colour*/
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
    #navButton1 {
-        position: fixed;
-        left:60px;
+        position: relative;
+        right: 80%;
     }
    #navButton2 {
-        position: fixed;
-        left:130px;
+        position: relative;
+        right:50%;
     }
        #navButton3 {
-        position: fixed;
-        left:200px;
+        position: relative;
+        right: 22%;
     }
        #navButton4 {
-        position: fixed;
-        left:260px;
+        position: relative;
+        left:8%;
     }
 }
-
-
+@media only screen and (max-width: 375px) {
+   #navButton1 {
+        position: relative;
+        right: 80%;
+    }
+   #navButton2 {
+        position: relative;
+        right:50%;
+    }
+       #navButton3 {
+        position: relative;
+        right: 22%;
+    }
+       #navButton4 {
+        position: relative;
+        left:2%;
+    }
+}
+@media only screen and (max-width: 375px) {
+   #navButton1 {
+        position: relative;
+        right: 80%;
+    }
+   #navButton2 {
+        position: relative;
+        right:50%;
+    }
+       #navButton3 {
+        position: relative;
+        right: 22%;
+    }
+       #navButton4 {
+        position: relative;
+        left:2%;
+    }
+}
+@media only screen and (max-width: 800px) {
+   #navButton1 {
+        position: relative;
+        right: 80%;
+    }
+   #navButton2 {
+        position: relative;
+        right:50%;
+    }
+       #navButton3 {
+        position: relative;
+        right: 22%;
+    }
+       #navButton4 {
+        position: relative;
+        left: 6%
+    }
+}
