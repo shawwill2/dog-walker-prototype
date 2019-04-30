@@ -18,11 +18,9 @@
   position: fixed;  /*fixed position while scrolling*/
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 100%;
-  width: 80px;
-  pointer-events: none;
-  opacity: 0.7;
+  width: 100%;
+  height: 44px;
+  pointer-events: none
 }
 
 #legend {
@@ -85,10 +83,10 @@
   background-color: #67c8a6; /*nav bar colour*/
   position: fixed;  /*fixed position while scrolling*/
   overflow: hidden;
-  bottom: 0px;
-  right: 0;
+  bottom: 44px;
+  left: 0;
   width: 60px;
-  height: 44px;
+  height: 20px;
   z-index: 1;
   font-size: 12.5px;
   text-decoration: none;
@@ -138,53 +136,5 @@ a:visited {
   background-color: #edf9f6;/*set background colour*/
 }
 
-#navButton1 {
-    position: fixed; 
-    background-color: #67c8a6; 
-    border: none;
-    font-weight: bold; 
-    color: #f8db7e;
-    bottom: 30px;
-}
-#navButton2 {
-    position: fixed; 
-    background-color: #67c8a6; 
-    border: none;
-    font-weight: bold; 
-    color: #f8db7e;
-    bottom: 70px;
-}
-#navButton3 {
-    position: fixed; 
-    background-color: #67c8a6; 
-    border: none;
-    font-weight: bold; 
-    color: #f8db7e;
-    bottom: 110px;
-}
-#navButton4 {
-    position: fixed; 
-    background-color: #67c8a6; 
-    border: none;
-    font-weight: bold; 
-    color: #f8db7e;
-    bottom: 140px;
-}
-
 .container {
-}
-
-@media only screen and (max-width: 320px) {
-  #navButton1 {
-
-  }
-      #navButton2 {
-
-  }
-      #navButton3 {
-
-  }
-      #navButton4 {
-
-  }
 }
