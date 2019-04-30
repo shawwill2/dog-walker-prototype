@@ -191,10 +191,10 @@ a:visited {
         left:8%;
     }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 320px) {
    #navButton1 {
         position: relative;
-        right: 80%;
+        right: 75%;
     }
    #navButton2 {
         position: relative;
@@ -202,11 +202,11 @@ a:visited {
     }
        #navButton3 {
         position: relative;
-        right: 22%;
+        right: 15%;
     }
        #navButton4 {
         position: relative;
-        left:2%;
+        left:15%;
     }
 }
 @media only screen and (max-width: 375px) {
